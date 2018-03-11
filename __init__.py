@@ -25,6 +25,8 @@ class Classificator(QWidget):
         self.pic.setGeometry(10, 10, 500, 500)
         if (self.i < self.i_max):
             self.pic.setPixmap(QPixmap(self.image_list[self.i]).scaled(500, 500))
+        else:
+            self.pic.setPixmap(QPixmap("logo.jpg").scaled(500, 500))
 
         # Label
         self.label1 = QLabel(self)
@@ -88,6 +90,7 @@ class Classificator(QWidget):
             self.pic.setPixmap(QPixmap(self.image_list[self.i-1]).scaled(500, 500))
             self.textbox.setText("")
         else:
+            self.pic.setPixmap(QPixmap("logo.jpg").scaled(500, 500))
             QMessageBox.question(self, 'Message', "Снимки закончились!", QMessageBox.Ok,
                                  QMessageBox.Ok)
 
